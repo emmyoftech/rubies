@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,14 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Component = void 0;
-class Component {
+export class Component {
     constructor() {
         this.partialHtmlBaseUrl = "/dist/partial-html/";
         this.partialCSSBaseUrl = "/dist/css/partial-styles/";
         this.loadComponentStyle = () => new Promise((res, rej) => {
-            const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.css.map`, linkElement = this.MainDocument.createElement("link");
+            const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.partial.css`, linkElement = this.MainDocument.createElement("link");
             linkElement.id = this.name;
             linkElement.rel = "stylesheet";
             linkElement.href = styleLinkUrl;
@@ -47,4 +44,3 @@ class Component {
         });
     }
 }
-exports.Component = Component;

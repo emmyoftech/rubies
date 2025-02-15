@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LandIngPageComponent = void 0;
-const component_class_1 = require("../classes/component.class");
-class LandIngPageComponent extends component_class_1.Component {
+import { Component } from "../classes/component.class.js";
+export class LandIngPageComponent extends Component {
     constructor() {
         super(...arguments);
         this.name = "landing-page";
@@ -12,4 +9,3 @@ class LandIngPageComponent extends component_class_1.Component {
     }
     ;
 }
-exports.LandIngPageComponent = LandIngPageComponent;

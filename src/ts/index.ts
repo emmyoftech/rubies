@@ -1,4 +1,4 @@
-import { LandIngPageComponent } from "/partial-scripts/landing-page.component"
+import { LandIngPageComponent } from "./partial-scripts/landing-page.component.js"
 
 (async function() {
     const load = new LandIngPageComponent()
@@ -6,4 +6,4 @@ import { LandIngPageComponent } from "/partial-scripts/landing-page.component"
     await load.initalize(document)
 
     load.onReady()
-})
+})()

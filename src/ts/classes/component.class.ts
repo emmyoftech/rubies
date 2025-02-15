@@ -26,7 +26,7 @@ export abstract class Component {
     }
 
     private loadComponentStyle = () => new Promise<void>((res, rej) => {
-        const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.css.map`,
+        const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.partial.css`,
 
         linkElement = this.MainDocument.createElement("link")
 
