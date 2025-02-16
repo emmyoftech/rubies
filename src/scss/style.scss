@@ -43,12 +43,15 @@ html{
             height: 100%;
             background-image: url(/dist/images/background-image.jpg);
             z-index: 1;
-            opacity: .2;
+            opacity: .1;
         }
 
-        & > * {
+        & > *:not(floating-side-navigation) {
             width: clamp(320px, 90%, 1300px);
-            z-index: 2;
+
+            &:not(navigation){
+                z-index: 2;
+            }
         }
     }
 }

@@ -1,0 +1,113 @@
+@import "../config";
+
+floating-side-navigation{
+    position: fixed;
+    left: -100%;
+    z-index: 15;
+    width: clamp(320px, 100%, 400px);
+    height: 100%;
+    backdrop-filter: blur($large_size);
+    display: flex;
+    flex-flow: column;
+    gap: $large_size;
+    padding: $large_size $med_size $large_size $large_size;
+    transition: .3s ease;
+
+    &.open {
+        left: 0;
+    }
+
+    & > ul{
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        gap: $large_size;
+
+        & > li{
+            list-style: none;
+
+            & > p{
+                font-family: $font_semi_bold;
+                cursor: pointer;
+                transition: .3s ease;
+
+                &:hover{
+                    color: $other_pallet_1;
+                }
+            }
+
+            &.drop-down{
+
+                p{
+                    display: flex;
+                    justify-content: space-between;
+
+
+                    span{
+                        &.spin{
+                            svg{
+                                rotate: 90deg;
+                            }
+                        }
+
+                        svg{
+                            transition: .3s ease;
+                        }
+                    }
+                }
+
+                div{
+                    display: grid;
+                    grid-template-rows: 0fr;
+
+                    &.open{
+                        grid-template-rows: 1fr;
+
+                        .drop-item-holder{
+                            padding: $med_size;
+                        }
+
+                    }
+
+                    .drop-item-holder{
+                        overflow: hidden;
+                        transition: .3s ease;
+                        margin-left: $large_size;
+                        display: flex;
+                        flex-flow: column;
+                        gap: $med_size;
+
+                        li{
+                            display: flex;
+                            font-size: $med_size;
+
+                            span{
+                                width: $large_size;
+                            }
+
+                            p{
+                                text-transform: capitalize;
+                                font-family: $font_semi_bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .auth-holder{
+        display: flex;
+        gap: $med_size;
+
+        button{
+            flex: 1;
+            background-color: transparent;
+            outline: none;
+            padding: $small_size;
+            border: solid 1px;
+            border-radius: $small_size;
+            cursor: pointer;
+        }
+    }    
+}

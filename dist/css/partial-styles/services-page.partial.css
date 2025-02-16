@@ -36,7 +36,7 @@ services-page ul li {
   gap: 24px;
 }
 services-page ul li:nth-child(1) span {
-  background-color: #ed5b5c;
+  background-color: #ED5B5C;
 }
 services-page ul li:nth-child(2) span {
   background-color: #5a97f4;

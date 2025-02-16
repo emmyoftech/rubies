@@ -6,7 +6,7 @@ $gray_pallet: #68717F;
 
 $white_pallete: #fff;
 
-$other_pallet_1: #ed5b5c;
+$other_pallet_1: #ED5B5C;
 
 $other_pallet_2: #466089;
 
@@ -14,14 +14,18 @@ $other_pallet_3: #5a97f4;
 
 $other_pallet_4: #f1e3e3;
 
+$other_pallet_6: #27282B;
+
+$other_pallet_7: #8C8C8C;
+
 
 // Numeric Variables
 
 $small_size: 6px;
 
-$med_size: 12px;
+$med_size: $small_size * 2;
 
-$large_size: 24px;
+$large_size: $med_size * 2;
 
 
 // Fonts

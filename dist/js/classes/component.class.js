@@ -37,10 +37,11 @@ export class Component {
     looadComponentDOM() {
         return __awaiter(this, void 0, void 0, function* () {
             const rawHtmlData = yield fetch(`${this.partialHtmlBaseUrl}${this.name}.component.html`), rawHtml = yield rawHtmlData.text();
-            const componentElementInDocument = document.querySelector(this.name);
-            if (!componentElementInDocument)
+            //@ts-ignore
+            this.componentBody = document.querySelector(this.name);
+            if (!this.componentBody)
                 throw Error("failed to locate html DOM in Document");
-            componentElementInDocument.innerHTML = rawHtml;
+            this.componentBody.innerHTML = rawHtml;
         });
     }
 }

@@ -5,7 +5,9 @@ export abstract class Component {
 
     abstract name: string
 
-    MainDocument!: Document 
+    MainDocument!: Document
+
+    componentBody!: HTMLElement
 
     abstract onReady(): void
 
@@ -50,10 +52,11 @@ export abstract class Component {
 
         rawHtml = await rawHtmlData.text() 
 
-        const componentElementInDocument = document.querySelector(this.name)
+        //@ts-ignore
+        this.componentBody = document.querySelector(this.name)
 
-        if(!componentElementInDocument) throw Error("failed to locate html DOM in Document")
+        if(!this.componentBody) throw Error("failed to locate html DOM in Document")
 
-        componentElementInDocument.innerHTML = rawHtml
+        this.componentBody.innerHTML = rawHtml
     }
 }

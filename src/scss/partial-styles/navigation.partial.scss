@@ -1,4 +1,5 @@
 @import "../config";
+@import "../mixing";
 
 navigation{
     position: sticky;
@@ -7,19 +8,162 @@ navigation{
     align-items: center;
     height: 10vh;
     gap: $large_size;
+    z-index: 10;
+    transition: .3s ease;
 
-    ul{
+    &.left-top{
+        background-color: $other_pallet_4;
+        @include sideFillers($other_pallet_4, sticky);
+    }
+
+    .hamburger{
+        display: none;
+        place-items: center;
+        width: 35px;
+        height: 35px;
+        border: solid 1px;
+        border-radius: $small_size;
+        cursor: pointer;
+    }
+
+    & > ul{
         flex: 1;
         list-style: none;
         display: flex;
         gap: $large_size;
         margin-left: $large_size;
 
-        li{
-            font-family: $font;
-            font-size: $med_size;
-            font-weight: bold;
-            cursor: pointer;
+        & > li{
+           position: relative;
+
+            &:not(.drop-down){
+                &::before{
+                    position: absolute;
+                    content: '';
+                    background-color: $other_pallet_1;
+                    height: 3px;
+                    width: 100%;
+                    left: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    bottom: -$small_size * 2;
+                    transition: .3s ease;
+                }
+    
+                &:hover{
+                    &::before{
+                        opacity: 1;
+                        bottom: -$small_size;
+                    }
+                }
+            }
+            
+            & > p {
+                display: flex;
+                align-items: center;
+                font-family: $font;
+                font-size: $med_size;
+                font-weight: bold;
+                cursor: pointer;
+
+                span{
+                    margin-left: $small_size;
+                }
+            }
+
+            &.drop-down {
+                
+                &.dropped{
+                    & > p{
+                        color: $other_pallet_1;
+
+                        span{
+                            svg{
+                                rotate: 180deg;
+                            }
+                        }
+                    }
+                }
+
+                span{
+                    svg{
+                        transition: .3s ease;
+                    }
+                }
+
+                .drop-item-holder{
+                    position: absolute;
+                    width: 200px;
+                    background-color: $white_pallete;
+                    top: calc(100% + $large_size);
+                    padding: $med_size $large_size;
+                    border-radius: $small_size;
+                    transform: translateY($large_size);
+                    opacity: 0;
+                    pointer-events: none;
+                    display: flex;
+                    flex-flow: column;
+                    gap: $med_size;
+                    box-shadow: 5px 5px 5px transparentize($color: $other_pallet_1, $amount: .8);
+                    transition: .3s ease;
+
+                    &.open{
+                        transform: translateY(0px);
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+
+                    li{
+                        display: flex;
+                        font-size: $med_size;
+                        gap: $med_size;
+                        cursor: pointer;
+                        padding: $small_size;
+                        border-radius: $small_size;
+                        transition: .3s ease;
+
+
+                        &:hover{
+                            background-color: $other_pallet_1;
+
+                            span, p{
+                                color: $white_pallete;
+                            }
+                        }
+
+                        span{
+                            width: $med_size;
+                            color: $other_pallet_1;
+                        }
+
+                        p{
+                            text-transform: capitalize;        
+                            font-family: $font_semi_bold;
+
+                        }
+                    }
+
+                    div{
+                        position: relative;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .drop-item-holder{
+                            left: 120%;
+                            top: -115%;
+                        }
+
+                        a, span{
+                            color: $other_pallet_1;
+                        }
+
+                        a{
+                            font-size: $med_size;
+                            font-family: $font_semi_bold;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -39,6 +183,23 @@ navigation{
             &:nth-last-child(1){
                 border: solid 1px;
             }
+        }
+    }
+
+    @media (max-width: 900px) {
+        justify-content: space-between;
+        flex-flow: row-reverse;
+
+        .hamburger{
+            display: grid;
+        }
+
+        & > ul{
+            display: none;
+        }
+
+        .auth-holder{
+            display: none;
         }
     }
 }

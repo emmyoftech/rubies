@@ -31,10 +31,10 @@ landing-page{
     }
 
     .title-holder{
+        width: clamp(300px, 100%, 600px);
         display: flex;
         flex-flow: column;
         align-self: center;
-        max-width: 500px;
         gap: $med_size;
         
         .title-text{
@@ -58,6 +58,25 @@ landing-page{
         .badges{
             display: flex;
             gap: $med_size;
+        }
+    }
+
+    @media (max-width: 950px) {
+        .image-layer{
+            display: none;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .title-holder{
+            align-items: center;
+
+            .title-text{
+                h3{
+                    text-align: center;
+                    font-size: $large_size * 1.5;
+                }
+            }
         }
     }
 }

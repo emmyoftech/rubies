@@ -1,0 +1,28 @@
+@import "config";
+
+@mixin sideFillers ($bg_color, $positioning: relative) {
+    position: $positioning;
+
+    &::before, &::after{
+        position: absolute;
+        background-color: $bg_color;
+        height: 100%;
+        top: 0;
+        width: 20000px;
+        content: '';
+        z-index: 1;
+    }
+
+    &::before{
+        left: -100px;
+    }
+
+    &::after{
+        right: -100px;
+    }   
+
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
+}

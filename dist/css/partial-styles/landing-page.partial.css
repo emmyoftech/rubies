@@ -24,10 +24,10 @@ landing-page .image-layer div.phone-image {
   left: 40%;
 }
 landing-page .title-holder {
+  width: clamp(300px, 100%, 600px);
   display: flex;
   flex-flow: column;
   align-self: center;
-  max-width: 500px;
   gap: 12px;
 }
 landing-page .title-holder .title-text {
@@ -48,6 +48,20 @@ landing-page .title-holder > p {
 landing-page .title-holder .badges {
   display: flex;
   gap: 12px;
+}
+@media (max-width: 950px) {
+  landing-page .image-layer {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  landing-page .title-holder {
+    align-items: center;
+  }
+  landing-page .title-holder .title-text h3 {
+    text-align: center;
+    font-size: 36px;
+  }
 }
 
 /*# sourceMappingURL=landing-page.partial.css.map */

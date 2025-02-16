@@ -27,19 +27,20 @@ features-page .feature .description p {
   line-height: 24px;
 }
 features-page .testimonial {
-  position: relative;
   width: 100%;
   height: 717px;
   background-color: #f1e3e3;
   display: flex;
   align-items: center;
+  gap: 72px;
+  position: relative;
 }
 features-page .testimonial::before, features-page .testimonial::after {
   position: absolute;
   background-color: #f1e3e3;
   height: 100%;
   top: 0;
-  width: 200px;
+  width: 20000px;
   content: "";
   z-index: 1;
 }
@@ -56,11 +57,34 @@ features-page .testimonial > * {
 features-page .testimonial .testifier {
   width: 496px;
   height: 496px;
-  background-color: #ed5b5c;
+  background-color: #ED5B5C;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
   border-bottom-left-radius: 50%;
   overflow: hidden;
+}
+features-page .testimonial .testimony {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+  max-width: 470px;
+}
+features-page .testimonial .testimony p {
+  line-height: 30px;
+  font-family: Monserat-Regular;
+  font-size: 17px;
+}
+features-page .testimonial .testimony b {
+  font-family: Monserat-Bold;
+}
+features-page .testimonial .testimony a {
+  text-decoration: none;
+  color: #ED5B5C;
+  font-size: 10px;
+  font-family: Monserat-Regular;
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
 }
 
 /*# sourceMappingURL=features-page.partial.css.map */
