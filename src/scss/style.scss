@@ -1,7 +1,43 @@
-@import "config";
+@font-face {
+    font-family: Gilory-Light;
+    src: url(/dist/fonts/Gilroy-Light.otf);
+}
+
+@font-face {
+    font-family: Gilory-Extra-bold;
+    src: url(/dist/fonts/Gilroy-ExtraBold.otf);
+}
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html{
+    height: 100vh;
+
+    body{
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        height: auto;
+        overflow-x: hidden;
+
+        &::before{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: url(/dist/images/background-image.jpg);
+            z-index: 1;
+            opacity: .3;
+        }
+
+        & > * {
+            width: clamp(320px, 90%, 1300px);
+            z-index: 2;
+        }
+    }
 }

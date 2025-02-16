@@ -1,5 +1,62 @@
 @import "../config";
 
 landing-page{
-    background-color: $primary_pallet;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    overflow: hidden;
+
+    .image-layer{
+        position: absolute;
+        width: 60%;
+        height: 100%;
+        top: 0;
+        right: 0;
+
+        div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.9);
+
+            &.card-image{
+                top: 70%;
+            }
+
+            &.phone-image{
+                left: 40%;
+            }
+        }
+
+    }
+
+    .title-holder{
+        display: flex;
+        flex-flow: column;
+        align-self: center;
+        max-width: 500px;
+        gap: $small_size;
+        
+        .title-text{
+            display: flex;
+            flex-flow: column;
+            gap: $small_size;
+
+            h3{
+                font-size: $large_size * 1.5;
+                font-family: $title_font_light;
+            }
+        }
+
+        & > p{
+            color: $gray_pallet;
+            font-family: $title_font_light;
+            font-weight: bold;
+        }
+
+        .badges{
+            display: flex;
+            gap: $med_size;
+        }
+    }
 }

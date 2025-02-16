@@ -8,10 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { LandIngPageComponent } from "./partial-scripts/landing-page.component.js";
+import { NavigationComponent } from "./partial-scripts/navigation.component.js";
+import { ServicesPageComponent } from "./partial-scripts/services-page.component.js";
+const components = [
+    new LandIngPageComponent(),
+    new NavigationComponent(),
+    new ServicesPageComponent()
+];
 (function () {
     return __awaiter(this, void 0, void 0, function* () {
-        const load = new LandIngPageComponent();
-        yield load.initalize(document);
-        load.onReady();
+        for (const component of components) {
+            yield component.initalize(document);
+            component.onReady();
+        }
     });
 })();

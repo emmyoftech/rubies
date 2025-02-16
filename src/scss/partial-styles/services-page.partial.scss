@@ -1,0 +1,35 @@
+@import "../config";
+
+services-page {
+    display: flex;
+    flex-flow: column;
+    gap: $large_size * 2;
+
+    section{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: $small_size;
+
+        h2{
+            font-family: $title_font_light;
+        }
+    }
+
+    ul{
+        height: 250px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-content: center;
+        gap: $large_size;
+
+        li{
+            background-color: $gray_pallet;
+            border-radius: $med_size;
+            box-shadow: 5px 5px 5px transparentize($color: #000000, $amount: .8);
+            height: 200px;
+            background-color: $white_pallete;
+            list-style: none;
+        }
+    }
+}

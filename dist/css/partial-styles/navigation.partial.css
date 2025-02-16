@@ -1,0 +1,39 @@
+navigation {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  gap: 24px;
+}
+navigation ul {
+  flex: 1;
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin-left: 24px;
+}
+navigation ul li {
+  font-family: Gilory-Light;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+navigation .auth-holder {
+  display: flex;
+  gap: 12px;
+}
+navigation .auth-holder button {
+  outline: none;
+  background-color: transparent;
+  width: 100px;
+  height: 35px;
+  font-family: Gilory-Light;
+  border: none;
+  cursor: pointer;
+}
+navigation .auth-holder button:nth-last-child(1) {
+  border: solid 1px;
+}
+
+/*# sourceMappingURL=navigation.partial.css.map */

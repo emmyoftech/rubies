@@ -1,0 +1,44 @@
+@import "../config";
+
+navigation{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    gap: $large_size;
+
+    ul{
+        flex: 1;
+        list-style: none;
+        display: flex;
+        gap: $large_size;
+        margin-left: $large_size;
+
+        li{
+            font-family: $title_font_light;
+            font-size: $med_size;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .auth-holder{
+        display: flex;
+        gap: $med_size;
+
+        button{
+            outline: none;
+            background-color: transparent;
+            width: 100px;
+            height: 35px;
+            font-family: $title_font_light;
+            border: none;
+            cursor: pointer;
+
+            &:nth-last-child(1){
+                border: solid 1px;
+            }
+        }
+    }
+}

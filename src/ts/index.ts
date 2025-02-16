@@ -1,9 +1,21 @@
+import { Component } from "./classes/component.class.js"
 import { LandIngPageComponent } from "./partial-scripts/landing-page.component.js"
+import { NavigationComponent } from "./partial-scripts/navigation.component.js";
+import { ServicesPageComponent } from "./partial-scripts/services-page.component.js";
+
+const components: Component[] = [
+    new LandIngPageComponent(),
+
+    new NavigationComponent(),
+
+    new ServicesPageComponent()
+];
 
 (async function() {
-    const load = new LandIngPageComponent()
+    for (const component of components) {
 
-    await load.initalize(document)
+        await component.initalize(document)
 
-    load.onReady()
+        component.onReady()
+    }
 })()
