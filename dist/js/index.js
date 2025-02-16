@@ -7,13 +7,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { FeaturesPageComponent } from "./partial-scripts/features-page.component.js";
 import { LandIngPageComponent } from "./partial-scripts/landing-page.component.js";
 import { NavigationComponent } from "./partial-scripts/navigation.component.js";
 import { ServicesPageComponent } from "./partial-scripts/services-page.component.js";
 const components = [
     new LandIngPageComponent(),
     new NavigationComponent(),
-    new ServicesPageComponent()
+    new ServicesPageComponent(),
+    new FeaturesPageComponent()
 ];
 (function () {
     return __awaiter(this, void 0, void 0, function* () {

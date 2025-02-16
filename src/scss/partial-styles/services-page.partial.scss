@@ -4,6 +4,8 @@ services-page {
     display: flex;
     flex-flow: column;
     gap: $large_size * 2;
+    margin-top: ($large_size * 6);
+    margin-bottom: ($large_size * 4);
 
     section{
         display: flex;
@@ -12,24 +14,75 @@ services-page {
         gap: $small_size;
 
         h2{
-            font-family: $title_font_light;
+            font-family: $font;
         }
     }
 
     ul{
-        height: 250px;
+        height: auto;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        padding: $large_size 0px;
         place-content: center;
-        gap: $large_size;
+        gap: $large_size + $small_size;
 
         li{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
             background-color: $gray_pallet;
             border-radius: $med_size;
             box-shadow: 5px 5px 5px transparentize($color: #000000, $amount: .8);
-            height: 200px;
+            height: 270px;
             background-color: $white_pallete;
             list-style: none;
+            padding: $med_size $large_size;
+            gap: $large_size;
+
+            &:nth-child(1){
+                span{
+                    background-color: $other_pallet_1;
+                }
+            }
+
+            &:nth-child(2){
+                span{
+                    background-color: $other_pallet_3;
+                }
+            }
+
+            &:nth-child(3){
+                span{
+                    background-color: $other_pallet_2;
+                }
+            }
+
+            &:nth-child(4){
+                span{
+                    background-color: $primary_pallet;
+                }
+            }
+
+
+            span{
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: $white_pallete;
+            }
+
+            h4{
+                font-family: $font_semi_bold;
+                font-size: $med_size + 3;
+            }
+
+            p{
+                font-family: $font;
+                font-size: $med_size;
+                line-height: $med_size + $small_size;
+            }
         }
     }
 }

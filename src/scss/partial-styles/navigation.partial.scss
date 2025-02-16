@@ -16,7 +16,7 @@ navigation{
         margin-left: $large_size;
 
         li{
-            font-family: $title_font_light;
+            font-family: $font;
             font-size: $med_size;
             font-weight: bold;
             cursor: pointer;
@@ -32,7 +32,7 @@ navigation{
             background-color: transparent;
             width: 100px;
             height: 35px;
-            font-family: $title_font_light;
+            font-family: $font;
             border: none;
             cursor: pointer;
 

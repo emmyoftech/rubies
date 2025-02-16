@@ -14,7 +14,7 @@ navigation ul {
   margin-left: 24px;
 }
 navigation ul li {
-  font-family: Gilory-Light;
+  font-family: Monserat-Regular;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
@@ -28,7 +28,7 @@ navigation .auth-holder button {
   background-color: transparent;
   width: 100px;
   height: 35px;
-  font-family: Gilory-Light;
+  font-family: Monserat-Regular;
   border: none;
   cursor: pointer;
 }

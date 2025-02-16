@@ -1,10 +1,18 @@
 @font-face {
-  font-family: Gilory-Light;
-  src: url(/dist/fonts/Gilroy-Light.otf);
+  font-family: Monserat-Bold;
+  src: url(/dist/fonts/Montserrat-Bold.ttf);
 }
 @font-face {
-  font-family: Gilory-Extra-bold;
-  src: url(/dist/fonts/Gilroy-ExtraBold.otf);
+  font-family: Monserat-SemiBold;
+  src: url(/dist/fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: Monserat-Regular;
+  src: url(/dist//fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Monserat-Light;
+  src: url(/dist/fonts/Montserrat-Light.ttf);
 }
 * {
   padding: 0;
@@ -22,6 +30,7 @@ html body {
   align-items: center;
   height: auto;
   overflow-x: hidden;
+  background-color: whitesmoke;
 }
 html body::before {
   position: absolute;
@@ -30,7 +39,7 @@ html body::before {
   height: 100%;
   background-image: url(/dist/images/background-image.jpg);
   z-index: 1;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 html body > * {
   width: clamp(320px, 90%, 1300px);

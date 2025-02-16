@@ -2,6 +2,8 @@ services-page {
   display: flex;
   flex-flow: column;
   gap: 48px;
+  margin-top: 144px;
+  margin-bottom: 96px;
 }
 services-page section {
   display: flex;
@@ -10,22 +12,57 @@ services-page section {
   gap: 6px;
 }
 services-page section h2 {
-  font-family: Gilory-Light;
+  font-family: Monserat-Regular;
 }
 services-page ul {
-  height: 250px;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  padding: 24px 0px;
   place-content: center;
-  gap: 24px;
+  gap: 30px;
 }
 services-page ul li {
-  background-color: #858C90;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: #68717F;
   border-radius: 12px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  height: 200px;
+  height: 270px;
   background-color: #fff;
   list-style: none;
+  padding: 12px 24px;
+  gap: 24px;
+}
+services-page ul li:nth-child(1) span {
+  background-color: #ed5b5c;
+}
+services-page ul li:nth-child(2) span {
+  background-color: #5a97f4;
+}
+services-page ul li:nth-child(3) span {
+  background-color: #466089;
+}
+services-page ul li:nth-child(4) span {
+  background-color: #000;
+}
+services-page ul li span {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+services-page ul li h4 {
+  font-family: Monserat-SemiBold;
+  font-size: 15px;
+}
+services-page ul li p {
+  font-family: Monserat-Regular;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 /*# sourceMappingURL=services-page.partial.css.map */

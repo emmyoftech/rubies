@@ -1,0 +1,66 @@
+features-page {
+  margin: 96px 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 240px;
+}
+features-page .feature {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+}
+features-page .feature.reverse {
+  flex-flow: row-reverse;
+}
+features-page .feature .description {
+  max-width: 380px;
+}
+features-page .feature .description h1 {
+  font-family: Monserat-Light;
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+features-page .feature .description p {
+  font-family: Monserat-Regular;
+  color: #68717F;
+  line-height: 24px;
+}
+features-page .testimonial {
+  position: relative;
+  width: 100%;
+  height: 717px;
+  background-color: #f1e3e3;
+  display: flex;
+  align-items: center;
+}
+features-page .testimonial::before, features-page .testimonial::after {
+  position: absolute;
+  background-color: #f1e3e3;
+  height: 100%;
+  top: 0;
+  width: 200px;
+  content: "";
+  z-index: 1;
+}
+features-page .testimonial::before {
+  left: -100px;
+}
+features-page .testimonial::after {
+  right: -100px;
+}
+features-page .testimonial > * {
+  position: relative;
+  z-index: 2;
+}
+features-page .testimonial .testifier {
+  width: 496px;
+  height: 496px;
+  background-color: #ed5b5c;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=features-page.partial.css.map */

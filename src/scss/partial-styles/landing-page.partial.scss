@@ -35,7 +35,7 @@ landing-page{
         flex-flow: column;
         align-self: center;
         max-width: 500px;
-        gap: $small_size;
+        gap: $med_size;
         
         .title-text{
             display: flex;
@@ -43,14 +43,15 @@ landing-page{
             gap: $small_size;
 
             h3{
-                font-size: $large_size * 1.5;
-                font-family: $title_font_light;
+                font-size: $large_size * 2;
+                font-family: $font_bold;
             }
         }
 
         & > p{
             color: $gray_pallet;
-            font-family: $title_font_light;
+            font-size: $med_size;
+            font-family: $font;
             font-weight: bold;
         }
 

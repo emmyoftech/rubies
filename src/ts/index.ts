@@ -1,4 +1,5 @@
 import { Component } from "./classes/component.class.js"
+import { FeaturesPageComponent } from "./partial-scripts/features-page.component.js";
 import { LandIngPageComponent } from "./partial-scripts/landing-page.component.js"
 import { NavigationComponent } from "./partial-scripts/navigation.component.js";
 import { ServicesPageComponent } from "./partial-scripts/services-page.component.js";
@@ -8,7 +9,9 @@ const components: Component[] = [
 
     new NavigationComponent(),
 
-    new ServicesPageComponent()
+    new ServicesPageComponent(),
+
+    new FeaturesPageComponent()
 ];
 
 (async function() {
