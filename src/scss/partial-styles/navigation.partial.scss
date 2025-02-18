@@ -104,7 +104,7 @@ navigation{
                     display: flex;
                     flex-flow: column;
                     gap: $med_size;
-                    box-shadow: 5px 5px 5px transparentize($color: $other_pallet_1, $amount: .8);
+                    // box-shadow: 5px 5px 5px transparentize($color: $other_pallet_1, $amount: .8);
                     transition: .3s ease;
 
                     &.open{

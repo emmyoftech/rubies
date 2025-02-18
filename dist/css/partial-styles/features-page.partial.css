@@ -1,90 +1,17 @@
-features-page {
-  margin: 96px 0;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: 240px;
-}
-features-page .feature {
-  display: flex;
-  align-items: center;
-  gap: 72px;
-}
-features-page .feature.reverse {
-  flex-flow: row-reverse;
-}
-features-page .feature .description {
-  max-width: 380px;
-}
-features-page .feature .description h1 {
-  font-family: Monserat-Light;
-  font-size: 48px;
-  margin-bottom: 24px;
-}
-features-page .feature .description p {
-  font-family: Monserat-Regular;
-  color: #68717F;
-  line-height: 24px;
-}
-features-page .testimonial {
-  width: 100%;
-  height: 717px;
-  background-color: #f1e3e3;
-  display: flex;
-  align-items: center;
-  gap: 72px;
-  position: relative;
-}
-features-page .testimonial::before, features-page .testimonial::after {
-  position: absolute;
-  background-color: #f1e3e3;
-  height: 100%;
-  top: 0;
-  width: 20000px;
-  content: "";
-  z-index: 1;
-}
-features-page .testimonial::before {
-  left: -100px;
-}
-features-page .testimonial::after {
-  right: -100px;
-}
-features-page .testimonial > * {
-  position: relative;
-  z-index: 2;
-}
-features-page .testimonial .testifier {
-  width: 496px;
-  height: 496px;
-  background-color: #ED5B5C;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  overflow: hidden;
-}
-features-page .testimonial .testimony {
-  display: flex;
-  flex-flow: column;
-  gap: 12px;
-  max-width: 470px;
-}
-features-page .testimonial .testimony p {
-  line-height: 30px;
-  font-family: Monserat-Regular;
-  font-size: 17px;
-}
-features-page .testimonial .testimony b {
-  font-family: Monserat-Bold;
-}
-features-page .testimonial .testimony a {
-  text-decoration: none;
-  color: #ED5B5C;
-  font-size: 10px;
-  font-family: Monserat-Regular;
-  display: flex;
-  gap: 12px;
-  margin-top: 18px;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "./config";
+ *   |         ^^^^^^^^^^
+ *   '
+ *   src\scss\partial-styles\features-page.partial.scss 1:9  root stylesheet */
 
-/*# sourceMappingURL=features-page.partial.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./config\";\d\a   \2502          ^^^^^^^^^^\a   \2575 \a   src\\scss\\partial-styles\\features-page.partial.scss 1:9  root stylesheet";
+}

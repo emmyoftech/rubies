@@ -1,67 +1,17 @@
-landing-page {
-  position: relative;
-  height: 90vh;
-  display: flex;
-  overflow: hidden;
-}
-landing-page .image-layer {
-  position: absolute;
-  width: 60%;
-  height: 100%;
-  top: 0;
-  right: 0;
-}
-landing-page .image-layer div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-}
-landing-page .image-layer div.card-image {
-  top: 70%;
-}
-landing-page .image-layer div.phone-image {
-  left: 40%;
-}
-landing-page .title-holder {
-  width: clamp(300px, 100%, 600px);
-  display: flex;
-  flex-flow: column;
-  align-self: center;
-  gap: 12px;
-}
-landing-page .title-holder .title-text {
-  display: flex;
-  flex-flow: column;
-  gap: 6px;
-}
-landing-page .title-holder .title-text h3 {
-  font-size: 48px;
-  font-family: Monserat-Bold;
-}
-landing-page .title-holder > p {
-  color: #68717F;
-  font-size: 12px;
-  font-family: Monserat-Regular;
-  font-weight: bold;
-}
-landing-page .title-holder .badges {
-  display: flex;
-  gap: 12px;
-}
-@media (max-width: 950px) {
-  landing-page .image-layer {
-    display: none;
-  }
-}
-@media (max-width: 500px) {
-  landing-page .title-holder {
-    align-items: center;
-  }
-  landing-page .title-holder .title-text h3 {
-    text-align: center;
-    font-size: 36px;
-  }
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "./config";
+ *   |         ^^^^^^^^^^
+ *   '
+ *   src\scss\partial-styles\landing-page.partial.scss 1:9  root stylesheet */
 
-/*# sourceMappingURL=landing-page.partial.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./config\";\d\a   \2502          ^^^^^^^^^^\a   \2575 \a   src\\scss\\partial-styles\\landing-page.partial.scss 1:9  root stylesheet";
+}

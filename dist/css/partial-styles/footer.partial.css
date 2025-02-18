@@ -29,6 +29,7 @@ footer main {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr) 2fr;
+  gap: 12px;
 }
 footer main h4 {
   font-family: Monserat-Regular;
@@ -43,6 +44,7 @@ footer main div:has(ul) {
   display: flex;
   flex-flow: column;
   gap: 18px;
+  min-width: 150px;
 }
 footer main div:has(ul) ul {
   display: flex;
@@ -63,7 +65,6 @@ footer main section {
 footer main section .news-form {
   width: 100%;
   height: 50px;
-  background-color: rgba(140, 140, 140, 0.1);
   padding: 6px 6px 6px 30px;
   border-radius: 6px;
   display: flex;
@@ -113,6 +114,33 @@ footer > section {
   font-family: Monserat-Regular;
   color: #8C8C8C;
   font-size: 12px;
+}
+@media (max-width: 1000px) {
+  footer {
+    height: max-content;
+  }
+  footer main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  footer main section {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 24px 12px;
+  }
+  footer main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  footer main div:has(img) {
+    grid-column: 1/-1;
+  }
+  footer main section .badges-holder {
+    flex-flow: column;
+    align-items: center;
+    gap: 12px;
+  }
 }
 
 /*# sourceMappingURL=footer.partial.css.map */

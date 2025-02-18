@@ -1,4 +1,6 @@
-@import "../config";
+@import "./config";
+
+$field_bg_color: transparentize($color: $other_pallet_4, $amount: .5);
 
 newsletter-page{
     padding: $large_size * 2;
@@ -38,7 +40,7 @@ newsletter-page{
         .field{
             width: clamp(200px, 50%, 500px);
             height: 50px;
-            background-color: transparentize($color: $other_pallet_4, $amount: .5);
+            background-color: $field_bg_color;
             border-radius: $small_size;
             display: flex;
             padding: $small_size $small_size $small_size ($med_size * 3);
@@ -68,6 +70,51 @@ newsletter-page{
                 &:hover{
                     background-color: $other_pallet_1;
                     color: $other_pallet_4;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        section{
+            gap: $large_size;
+        }
+    }
+
+    @media (max-width: 900px) {
+        padding: $large_size;
+
+        section{
+            padding: $med_size;
+            flex-flow: column;
+            height: max-content;
+
+            .text{
+                width: 100%;
+                max-width: none;
+            }
+
+            .field{
+                width: 100%;
+                flex-flow: column;
+                height: max-content;
+                padding: $small_size;
+                background-color: transparent;
+
+                input{
+                    flex: none;
+                    width: 100%;
+                    height: 50px;
+                    background-color: $field_bg_color;
+                    padding: $med_size;
+                    border-radius: $small_size;
+                }
+
+                button{
+                    flex: none;
+                    align-self: center;
+                    height: 30px;
+                    padding: 0 $med_size;
                 }
             }
         }

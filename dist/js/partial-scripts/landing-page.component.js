@@ -5,7 +5,6 @@ export class LandIngPageComponent extends Component {
         this.name = "landing-page";
     }
     onReady() {
-        console.log(this.name, "is ready");
     }
     ;
 }

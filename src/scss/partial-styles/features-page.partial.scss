@@ -1,5 +1,5 @@
-@import "../config";
-@import "../mixing";
+@import "./config";
+@import "./mixing";
 
 features-page{
     margin: ($large_size * 4) 0;
@@ -37,6 +37,7 @@ features-page{
     .testimonial{
         width: 100%;
         height: 717px;
+        padding: $large_size 0;
         background-color: $other_pallet_4;
         display: flex;
         align-items: center;
@@ -77,6 +78,65 @@ features-page{
                 display: flex;
                 gap: $med_size;
                 margin-top: $med_size + $small_size;
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .testifier{
+            width: 250px;
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        gap: $large_size;
+        margin: ($large_size * 2) 0;
+
+
+        .feature{
+            flex-flow: column;
+
+            .description {
+                h1{
+                    font-size: $large_size;
+                }
+            }
+
+            &.reverse{
+                flex-flow: column;
+
+                .description{
+                    max-width: none;
+                    width: 100%;
+                }
+            }
+
+            .image-holder{
+                width: 100%;
+                display: grid;
+                place-items: center;
+                object-fit: contain;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        .testimonial {
+            flex-flow: column;
+            height: max-content;
+
+            .testifier{
+                width: 200px;
+                height: 200px;
+                object-fit: contain;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }

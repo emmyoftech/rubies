@@ -13,6 +13,7 @@ footer{
         flex: 1;
         display: grid;
         grid-template-columns: repeat(3, 1fr) 2fr;
+        gap: $med_size;
 
         h4{
             font-family: $font;
@@ -29,6 +30,7 @@ footer{
             display: flex;
             flex-flow: column;
             gap: $med_size + $small_size;
+            min-width: 150px;
 
             ul{
                 display: flex;
@@ -53,7 +55,7 @@ footer{
             .news-form{
                 width: 100%;
                 height: 50px;
-                background-color: transparentize($color: $other_pallet_7, $amount: .9);
+                // background-color: transparentize($color: $other_pallet_7, $amount: .9);
                 padding: $small_size $small_size $small_size ($large_size + $small_size);
                 border-radius: $small_size;
                 display: flex;
@@ -115,5 +117,37 @@ footer{
         font-family: $font;
         color: $other_pallet_7;
         font-size: $med_size;
+    }
+
+    @media (max-width: 1000px) {
+        height: max-content;
+
+        main{
+            grid-template-columns: repeat(3, 1fr);
+
+            section{
+                grid-column: 1 / -1;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: $large_size $med_size;
+
+        main{
+            grid-template-columns: repeat(2, 1fr);
+
+            div:has(img){
+                grid-column: 1 / -1;
+            }
+
+            section{
+                .badges-holder{
+                    flex-flow: column;
+                    align-items: center;
+                    gap: $med_size;
+                }
+            }
+        }
     }
 }

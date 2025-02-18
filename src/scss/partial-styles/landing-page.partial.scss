@@ -1,4 +1,4 @@
-@import "../config";
+@import "./config";
 
 landing-page{
     position: relative;
@@ -61,21 +61,52 @@ landing-page{
         }
     }
 
-    @media (max-width: 950px) {
-        .image-layer{
-            display: none;
-        }
+    @media (max-width: 1200px) {
+        
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 950px) {
+        position: relative;
+
+        .image-layer{
+            position: absolute;
+            z-index: -1;
+
+            div {
+                transform: none;
+
+                &.card-image{
+                    transform: rotate(-45deg);
+                    top: 5%;
+                    opacity: .1;
+                }
+
+
+                &.phone-image{
+                    transform: rotate(45deg);
+                    opacity: .1;
+                    left: -80%;
+                }
+
+            }
+        }
+
         .title-holder{
             align-items: center;
+            width: 100%;
 
             .title-text{
                 h3{
                     text-align: center;
-                    font-size: $large_size * 1.5;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .title-text{
+            h3{
+                font-size: $large_size * 1.5;
             }
         }
     }
