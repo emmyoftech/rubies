@@ -1,12 +1,14 @@
 import { Component } from "../classes/component.class.js";
 export class NavigationComponent extends Component {
-    constructor() {
-        super(...arguments);
+    constructor(event) {
+        super();
         this.name = "navigation";
+        this.event = event;
     }
     onReady() {
         this.runDropDownFunctubality();
         this.handlesOnScroll();
+        this.runHmburgerOnClick();
     }
     locateAndCloseAllOpenedDropDown(drops) {
         for (const linkElement of drops) {
@@ -49,5 +51,13 @@ export class NavigationComponent extends Component {
             }
         };
         document.addEventListener("scroll", onScroll);
+    }
+    runHmburgerOnClick() {
+        const hamburger = this.componentBody.querySelector(".hamburger");
+        if (!hamburger)
+            return;
+        hamburger.onclick = () => {
+            this.event.emit("toggle");
+        };
     }
 }

@@ -1,17 +1,98 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./config";
- *   |         ^^^^^^^^^^
- *   '
- *   src\scss\partial-styles\floating-side-navigation.partial.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./config\";\d\a   \2502          ^^^^^^^^^^\a   \2575 \a   src\\scss\\partial-styles\\floating-side-navigation.partial.scss 1:9  root stylesheet";
+floating-side-navigation {
+  position: fixed;
+  left: -100%;
+  z-index: 15;
+  width: clamp(320px, 100%, 1100px);
+  height: 100%;
+  backdrop-filter: blur(24px);
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+  padding: 24px 12px 24px 24px;
+  transition: 0.3s ease;
 }
+floating-side-navigation.open {
+  left: 0;
+}
+floating-side-navigation .logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 24px;
+}
+floating-side-navigation .logo span {
+  font-size: 18px;
+  color: #ED5B5C;
+  cursor: pointer;
+}
+floating-side-navigation > ul {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  gap: 24px;
+}
+floating-side-navigation > ul > li {
+  list-style: none;
+}
+floating-side-navigation > ul > li > p {
+  font-family: Monserat-SemiBold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+floating-side-navigation > ul > li > p:hover {
+  color: #ED5B5C;
+}
+floating-side-navigation > ul > li.drop-down p {
+  display: flex;
+  justify-content: space-between;
+}
+floating-side-navigation > ul > li.drop-down p span.spin svg {
+  rotate: 90deg;
+}
+floating-side-navigation > ul > li.drop-down p span svg {
+  transition: 0.3s ease;
+}
+floating-side-navigation > ul > li.drop-down div {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+floating-side-navigation > ul > li.drop-down div.open {
+  grid-template-rows: 1fr;
+}
+floating-side-navigation > ul > li.drop-down div.open .drop-item-holder {
+  padding: 12px;
+}
+floating-side-navigation > ul > li.drop-down div .drop-item-holder {
+  overflow: hidden;
+  transition: 0.3s ease;
+  margin-left: 24px;
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+floating-side-navigation > ul > li.drop-down div .drop-item-holder li {
+  display: flex;
+  font-size: 12px;
+}
+floating-side-navigation > ul > li.drop-down div .drop-item-holder li span {
+  width: 24px;
+}
+floating-side-navigation > ul > li.drop-down div .drop-item-holder li p {
+  text-transform: capitalize;
+  font-family: Monserat-SemiBold;
+}
+floating-side-navigation .auth-holder {
+  display: flex;
+  gap: 12px;
+}
+floating-side-navigation .auth-holder button {
+  flex: 1;
+  background-color: transparent;
+  outline: none;
+  padding: 6px;
+  border: solid 1px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=floating-side-navigation.partial.css.map */

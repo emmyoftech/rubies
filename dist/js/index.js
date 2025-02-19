@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { EventEmitter } from "./classes/event-emitter.class.js";
 import { FeaturesPageComponent } from "./partial-scripts/features-page.component.js";
 import { FloatingSideNaviagtionComponent } from "./partial-scripts/floating-side-naviagtion.component.js";
 import { FooterComponent } from "./partial-scripts/footer.component.js";
@@ -14,9 +15,10 @@ import { LandIngPageComponent } from "./partial-scripts/landing-page.component.j
 import { NavigationComponent } from "./partial-scripts/navigation.component.js";
 import { NewsLetterPageComponent } from "./partial-scripts/newsletter-page.component.js";
 import { ServicesPageComponent } from "./partial-scripts/services-page.component.js";
+const eventEmitter = new EventEmitter();
 const components = [
-    new FloatingSideNaviagtionComponent(),
-    new NavigationComponent(),
+    new FloatingSideNaviagtionComponent(eventEmitter),
+    new NavigationComponent(eventEmitter),
     new LandIngPageComponent(),
     new ServicesPageComponent(),
     new FeaturesPageComponent(),

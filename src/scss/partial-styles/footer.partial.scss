@@ -55,7 +55,7 @@ footer{
             .news-form{
                 width: 100%;
                 height: 50px;
-                // background-color: transparentize($color: $other_pallet_7, $amount: .9);
+                background-color: transparentize($color: $other_pallet_7, $amount: .9);
                 padding: $small_size $small_size $small_size ($large_size + $small_size);
                 border-radius: $small_size;
                 display: flex;

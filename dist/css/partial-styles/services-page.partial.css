@@ -1,17 +1,82 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "./config";
- *   |         ^^^^^^^^^^
- *   '
- *   src\scss\partial-styles\services-page.partial.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"./config\";\d\a   \2502          ^^^^^^^^^^\a   \2575 \a   src\\scss\\partial-styles\\services-page.partial.scss 1:9  root stylesheet";
+services-page {
+  display: flex;
+  flex-flow: column;
+  gap: 48px;
+  margin-top: 144px;
+  margin-bottom: 96px;
 }
+services-page section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 6px;
+}
+services-page section h2 {
+  font-family: Monserat-Regular;
+}
+services-page ul {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 24px 0px;
+  place-content: center;
+  gap: 30px;
+}
+services-page ul li {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  min-width: 180px;
+  background-color: #68717F;
+  border-radius: 12px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  grid-auto-rows: 270px;
+  background-color: #fff;
+  list-style: none;
+  padding: 12px 24px;
+  gap: 24px;
+}
+services-page ul li:nth-child(1) span {
+  background-color: #ED5B5C;
+}
+services-page ul li:nth-child(2) span {
+  background-color: #5a97f4;
+}
+services-page ul li:nth-child(3) span {
+  background-color: #466089;
+}
+services-page ul li:nth-child(4) span {
+  background-color: #000;
+}
+services-page ul li span {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+services-page ul li h4 {
+  font-family: Monserat-SemiBold;
+  font-size: 15px;
+}
+services-page ul li p {
+  font-family: Monserat-Regular;
+  font-size: 12px;
+  line-height: 18px;
+}
+@media (max-width: 900px) {
+  services-page ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  services-page {
+    margin: 48px 0;
+  }
+  services-page ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=services-page.partial.css.map */

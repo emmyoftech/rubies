@@ -1,10 +1,10 @@
-@import "./config";
+@import "../config";
 
 floating-side-navigation{
     position: fixed;
     left: -100%;
     z-index: 15;
-    width: clamp(320px, 100%, 400px);
+    width: clamp(320px, 100%, 1100px);
     height: 100%;
     backdrop-filter: blur($large_size);
     display: flex;
@@ -15,6 +15,19 @@ floating-side-navigation{
 
     &.open {
         left: 0;
+    }
+
+    .logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: $large_size;
+
+        span{
+            font-size: $med_size + $small_size;
+            color: $other_pallet_1;
+            cursor: pointer;
+        }
     }
 
     & > ul{

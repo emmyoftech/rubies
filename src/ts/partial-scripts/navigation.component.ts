@@ -1,12 +1,24 @@
+import { EventEmitter } from "../classes/event-emitter.class.js";
+import { HamburgerEvent } from "..//types.js";
 import { Component } from "../classes/component.class.js";
 
-export class NavigationComponent extends Component{
+export class NavigationComponent extends Component {
     override name: string = "navigation";
+
+    private event!: EventEmitter<HamburgerEvent>
+
+    constructor(event: EventEmitter<HamburgerEvent>){
+        super()
+
+        this.event = event
+    }
 
     override onReady(): void {
         this.runDropDownFunctubality()
 
         this.handlesOnScroll()
+
+        this.runHmburgerOnClick()
     }
 
     private locateAndCloseAllOpenedDropDown(drops: NodeListOf<HTMLElement>){
@@ -22,7 +34,7 @@ export class NavigationComponent extends Component{
         }
     }
 
-    runDropDownFunctubality(){
+    private runDropDownFunctubality(){
 
         const allDropDownLinks = this.componentBody.querySelectorAll<HTMLElement>(".drop-down")
     
@@ -54,7 +66,7 @@ export class NavigationComponent extends Component{
         }
     }
 
-    handlesOnScroll (){
+    private handlesOnScroll (){
         const onScroll = () => {
             if(window.scrollY > 0){ // not at top
                 
@@ -67,5 +79,15 @@ export class NavigationComponent extends Component{
         }
     
         document.addEventListener("scroll", onScroll)
-    }    
+    }
+    
+    private runHmburgerOnClick () {
+        const hamburger = this.componentBody.querySelector<HTMLElement>(".hamburger")
+
+        if(!hamburger) return
+
+        hamburger.onclick = () => {
+            this.event.emit("toggle")
+        }
+    }
 }
