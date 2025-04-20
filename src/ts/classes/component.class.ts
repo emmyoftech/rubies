@@ -1,5 +1,5 @@
 export abstract class Component {
-    private partialHtmlBaseUrl = "/src/partial-html/"
+    private partialHtmlBaseUrl = "/dist/assets/partial-html/"
 
     private partialCSSBaseUrl = "/dist/css/partial-styles/"
 

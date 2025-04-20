@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export class Component {
     constructor() {
-        this.partialHtmlBaseUrl = "/src/partial-html/";
+        this.partialHtmlBaseUrl = "/dist/assets/partial-html/";
         this.partialCSSBaseUrl = "/dist/css/partial-styles/";
         this.loadComponentStyle = () => new Promise((res, rej) => {
             const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.partial.css`, linkElement = this.MainDocument.createElement("link");
