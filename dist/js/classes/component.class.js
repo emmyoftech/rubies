@@ -9,10 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export class Component {
     constructor() {
-        this.partialHtmlBaseUrl = "/dist/assets/partial-html/";
-        this.partialCSSBaseUrl = "/dist/css/partial-styles/";
+        this.ifProd = isNaN(parseInt(window.location.hostname));
+        this.partialHtmlBaseUrl = "/assets/partial-html/";
+        this.partialCSSBaseUrl = "/css/partial-styles/";
         this.loadComponentStyle = () => new Promise((res, rej) => {
-            const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.partial.css`, linkElement = this.MainDocument.createElement("link");
+            const styleLinkUrl = `${this.ifProd ? '' : '/dist'}${this.partialCSSBaseUrl}${this.name}.partial.css`, linkElement = this.MainDocument.createElement("link");
             linkElement.id = this.name;
             linkElement.rel = "stylesheet";
             linkElement.href = styleLinkUrl;
@@ -36,7 +37,7 @@ export class Component {
     }
     looadComponentDOM() {
         return __awaiter(this, void 0, void 0, function* () {
-            const rawHtmlData = yield fetch(`${this.partialHtmlBaseUrl}${this.name}.component.html`), rawHtml = yield rawHtmlData.text();
+            const rawHtmlData = yield fetch(`${this.ifProd ? '' : '/dist'}${this.partialHtmlBaseUrl}${this.name}.component.html`), rawHtml = yield rawHtmlData.text();
             //@ts-ignore
             this.componentBody = document.querySelector(this.name);
             if (!this.componentBody)

@@ -1,7 +1,9 @@
 export abstract class Component {
-    private partialHtmlBaseUrl = "/dist/assets/partial-html/"
+    private ifProd = isNaN(parseInt(window.location.hostname))
+        
+    private partialHtmlBaseUrl = "/assets/partial-html/"
 
-    private partialCSSBaseUrl = "/dist/css/partial-styles/"
+    private partialCSSBaseUrl = "/css/partial-styles/"
 
     abstract name: string
 
@@ -28,7 +30,7 @@ export abstract class Component {
     }
 
     private loadComponentStyle = () => new Promise<void>((res, rej) => {
-        const styleLinkUrl = `${this.partialCSSBaseUrl}${this.name}.partial.css`,
+        const styleLinkUrl = `${this.ifProd ? '' : '/dist'}${this.partialCSSBaseUrl}${this.name}.partial.css`,
 
         linkElement = this.MainDocument.createElement("link")
 
@@ -48,7 +50,7 @@ export abstract class Component {
     })
 
     private async looadComponentDOM () {
-        const rawHtmlData = await fetch(`${this.partialHtmlBaseUrl}${this.name}.component.html`),
+        const rawHtmlData = await fetch(`${this.ifProd ? '' : '/dist'}${this.partialHtmlBaseUrl}${this.name}.component.html`),
 
         rawHtml = await rawHtmlData.text() 
 
