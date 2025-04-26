@@ -116,7 +116,7 @@ features-page .testimonial .testimony a {
   features-page .testimonial {
     flex-flow: column;
     height: max-content;
-    padding: 0;
+    padding: 24px;
   }
 }
 
